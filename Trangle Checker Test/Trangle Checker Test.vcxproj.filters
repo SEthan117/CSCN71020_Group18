@@ -15,36 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="Trangle Checker Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="triangleSolver.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="triangleAngle.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="polygonSolver.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rectangleChecker.c">
+    <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="triangleSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="triangleAngle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="polygonSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="rectangleChecker.h">
+    <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
