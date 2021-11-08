@@ -141,14 +141,12 @@
   <ItemGroup>
     <ClCompile Include="main.c" />
     <ClCompile Include="polygonSolver.c" />
-    <ClCompile Include="rectangleChecker.c" />
     <ClCompile Include="triangleAngle.c" />
     <ClCompile Include="triangleSolver.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />
     <ClInclude Include="polygonSolver.h" />
-    <ClInclude Include="rectangleChecker.h" />
     <ClInclude Include="triangleAngle.h" />
     <ClInclude Include="triangleSolver.h" />
   </ItemGroup>
