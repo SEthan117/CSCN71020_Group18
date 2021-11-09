@@ -19,7 +19,7 @@ int* triangleAngle(int side1, int side2, int side3)
 	pi = acos(-1);
 	area = sqrt(simplify * (simplify - side1) * (simplify - side2) * (simplify - side3));
 	Lower = (side1 * side2 * side3) / (4 * area);
-	if ((side1 > 1 || side2 > 1 || side3 > 1))
+	if ((side1 > 1 && side2 > 1 && side3 > 1))
 	{
 		angle1 = (180 / pi) * asin(side1 / (2 * Lower));
 		angle2 = (180 / pi) * asin(side2 / (2 * Lower));
