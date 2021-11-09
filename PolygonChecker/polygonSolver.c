@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-#include<polygonSolver.h>
+#include"polygonSolver.h"
 
-int polygonPoints(int point1, int point2, int point3)
+int* polygonPoints(int point1, int point2, int point3, int point4)
 {
 	if (point1 > 0 && point2 > 0 && point3 > 0)
 	{
