@@ -7,6 +7,7 @@ extern "C" {
 #include "polygonSolver.h"
 #include "triangleAngle.h"
 #include "triangleSolver.h"
+#include "polygonSolver.h"
 }
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

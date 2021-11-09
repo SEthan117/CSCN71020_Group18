@@ -4,6 +4,7 @@
 #include "main.h"
 #include "triangleSolver.h"
 #include "triangleAngle.h"
+#include "polygonSolver.h"
 
 int side = 0;
 
@@ -30,6 +31,8 @@ int main() {
 			int* triangleSideLengthPtr = getTriangleSides(triangleSideLength);
 			triangleAngle(triangleSideLengthPtr[0], triangleSideLengthPtr[1], triangleSideLengthPtr[2]);
 			break;
+		//case 3:
+			//break;
 		case 0:
 			continueProgram = false;
 			break;
@@ -52,6 +55,7 @@ void printWelcome() {
 int printShapeMenu() {
 	printf_s("1. Triangle\n");
 	printf("2. Triangle angles\n");
+	printf("3. Rectangle checker\n");
 	printf_s("0. Exit\n");
 
 	int shapeChoice;
