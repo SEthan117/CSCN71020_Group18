@@ -6,7 +6,7 @@
 #include "triangleAngle.h"
 #include "polygonSolver.h"
 
-int side = 0;
+int side = 0; 
 
 int main() {
 	bool continueProgram = true;
