@@ -17,7 +17,7 @@ namespace GroupProjectUnitTests
 	TEST_CLASS(GroupProjectUnitTests)
 	{
 	public:
-		
+
 		TEST_METHOD(analyzeTriangleNotATriangleAllZeroesTest)
 		{
 			int side1 = 0;
@@ -61,7 +61,7 @@ namespace GroupProjectUnitTests
 			char* result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual("Equilateral triangle", result);
 		}
-	
+
 		TEST_METHOD(analyzeTriangleIsocelesTriangleSide1Side2Test)
 		{
 			int side1 = 4;
@@ -88,6 +88,27 @@ namespace GroupProjectUnitTests
 
 		}
 
+		TEST_METHOD(triangleangleTest)
+		{
+			int side1 = -1;
+			int side2 = 3;
+			int side3 = 3;
+			char answer[50] = "";
+			char* result = triangleAngle(side1, side2, side3, answer);
+			Assert::AreEqual("This is not a triangle", result);
+
+		}
+		TEST_METHOD(triangleangle2Test)
+		{
+			int side1 = 3;
+			int side2 = 3;
+			int side3 = 3;
+			char answer[50] = "";
+			char* something = "26.39,26.39,26.39";
+			char* result = triangleAngle(side1, side2, side3, answer);
+			Assert::AreEqual("26.39,26.39,26.39", result);
+
+		}
 	};
 
 

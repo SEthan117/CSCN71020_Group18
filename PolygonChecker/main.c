@@ -6,9 +6,14 @@
 #include "triangleAngle.h"
 #include "polygonSolver.h"
 
-int side = 0; 
+int side = 0;
 
 int main() {
+
+	char result[50] = { 0 };
+	char* test = "";
+
+
 	bool continueProgram = true;
 	while (continueProgram) {
 		printWelcome();
@@ -29,10 +34,11 @@ int main() {
 			printf("Triangle angles selected.\n");
 			int triangleSideLength[3] = { 0,0,0 };
 			int* triangleSideLengthPtr = getTriangleSides(triangleSideLength);
-			triangleAngle(triangleSideLengthPtr[0], triangleSideLengthPtr[1], triangleSideLengthPtr[2]);
+			test = triangleAngle(triangleSideLengthPtr[0], triangleSideLengthPtr[1], triangleSideLengthPtr[2], &result);
+			printf("%s", test);
 			break;
-		//case 3:
-			//break;
+			//case 3:
+				//break;
 		case 0:
 			continueProgram = false;
 			break;

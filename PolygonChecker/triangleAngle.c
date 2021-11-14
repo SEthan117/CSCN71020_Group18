@@ -1,12 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <string.h>
 #include <stdbool.h>
 #include <math.h>
 
 #include "triangleAngle.h"
 
-int* triangleAngle(int side1, int side2, int side3)
+char* triangleAngle(int side1, int side2, int side3, char* result)
 {
-
+	char* actual = "";
+	char angle1c[50];
+	char angle2c[50];
+	char angle3c[50];
 	double angle1;
 	double angle2;
 	double angle3;
@@ -25,11 +30,22 @@ int* triangleAngle(int side1, int side2, int side3)
 		angle2 = (180 / pi) * asin(side2 / (2 * Lower));
 		angle3 = (180 / pi) * asin(side3 / (2 * Lower));
 		printf("This creates a triangle.\n");
-		printf("%lf, %lf, %lf", angle1, angle2, angle3);
+		snprintf(angle1c, 50, "%.2f", angle1);
+		snprintf(angle2c, 50, "%.2f", angle2);
+		snprintf(angle3c, 50, "%.2f", angle3);
+		strcpy(result, angle1c);
+		strcat(result, ",");
+		strcat(result, angle2c);
+		strcat(result, ",");
+		strcat(result, angle3c);
+		actual = result;
+		return actual;
 	}
 
-	else
-		printf("This is not a triangle.\n");
 
-	return 0;
+	else
+	{
+		actual = "This is not a triangle";
+		return actual;
+	}
 }
