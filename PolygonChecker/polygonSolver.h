@@ -5,6 +5,6 @@ typedef struct point
 	int y;
 }POINT;
 
-char* polygonPoints(int, int, int, int,int,int,int,int);
+char* polygonPoints(int, int, int, int,int,int,int,int, char*);
 
 

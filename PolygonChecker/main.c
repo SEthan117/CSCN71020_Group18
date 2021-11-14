@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-
+#include <stdlib.h>
 #include "main.h"
 #include "triangleSolver.h"
 #include "triangleAngle.h"
@@ -10,8 +10,8 @@ int side = 0;
 
 int main() {
 
-	char result[50] = { 0 };
-	char* test = "";
+	char result[50] = "";
+	char string[50] = "";
 	char* rectangle = "";
 
 
@@ -35,15 +35,14 @@ int main() {
 			printf("Triangle angles selected.\n");
 			int triangleSideLength[3] = { 0,0,0 };
 			int* triangleSideLengthPtr = getTriangleSides(triangleSideLength);
-			test = triangleAngle(triangleSideLengthPtr[0], triangleSideLengthPtr[1], triangleSideLengthPtr[2], &result);
-			printf("%s", test);
+			triangleAngle(triangleSideLengthPtr[0], triangleSideLengthPtr[1], triangleSideLengthPtr[2], &result);
 			break;
-			case 3:
+		case 3:
 			printf("Rectangle selected. \n");
 			int pointX[4] = { 0,0,0,0 };
 			int pointY[4] = { 0,0,0,0 };
 			int* rectanglePoints = getRectanglePoints(pointX, pointY);
-			rectangle = polygonPoints(pointX[1], pointY[1], pointX[2], pointY[2], pointX[3], pointY[3], pointX[4], pointY[4]);
+			rectangle = polygonPoints(pointX[0], pointY[0], pointX[1], pointY[1], pointX[2], pointY[2], pointX[3], pointY[3], &string);
 			break;
 		case 0:
 			continueProgram = false;
@@ -73,7 +72,11 @@ int printShapeMenu() {
 	int shapeChoice;
 
 	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
+	if ((scanf_s("%1o", &shapeChoice) !=1) || shapeChoice<0 || shapeChoice >3 )
+	{
+		fprintf(stderr, "invalid input!\n");
+		exit(EXIT_FAILURE); 
+	}
 
 	return shapeChoice;
 }
@@ -82,7 +85,11 @@ int* getTriangleSides(int* triangleSides) {
 	printf_s("Enter the three sides of the triangle: ");
 	for (int i = 0; i < 3; i++)
 	{
-		scanf_s("%d", &triangleSides[i]);
+		if ((scanf_s("%d", &triangleSides[i]) !=1) || triangleSides[i] <0)
+		{
+			fprintf(stderr, "invalid input!\n");  
+			exit(EXIT_FAILURE);  
+		}
 	}
 	return triangleSides;
 }
@@ -90,10 +97,15 @@ int* getTriangleSides(int* triangleSides) {
 int getRectanglePoints(int* pointX, int* pointY)
 {
 	int points = (pointX, pointY);
-	printf("Input x values:");
-	for (int i = 1; i < 5; i++)
+	for (int i = 0; i < 4; i++)
 	{
-		scanf_s("%d %d", &pointX[i], &pointY[i]);
+		printf("Input (x,y) values:");
+		if ((scanf_s("%d %d", &pointX[i], &pointY[i]) !=2) || (pointX[i]<0) || (pointY[i] <0))
+		{
+			fprintf(stderr, "invalid input!\n");
+			exit(EXIT_FAILURE);
+		}
+		
 	}
 	return points;
 }

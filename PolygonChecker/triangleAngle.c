@@ -6,9 +6,9 @@
 
 #include "triangleAngle.h"
 
-char* triangleAngle(int side1, int side2, int side3, char* result)
+char* triangleAngle(int side1, int side2, int side3, char* stringptr)
 {
-	char* actual = "";
+	char* result = "";
 	char angle1c[50];
 	char angle2c[50];
 	char angle3c[50];
@@ -33,19 +33,18 @@ char* triangleAngle(int side1, int side2, int side3, char* result)
 		snprintf(angle1c, 50, "%.2f", angle1);
 		snprintf(angle2c, 50, "%.2f", angle2);
 		snprintf(angle3c, 50, "%.2f", angle3);
-		strcpy(result, angle1c);
-		strcat(result, ",");
-		strcat(result, angle2c);
-		strcat(result, ",");
-		strcat(result, angle3c);
-		actual = result;
-		return actual;
+		strcpy(stringptr, angle1c);
+		strcat(stringptr, ",");
+		strcat(stringptr, angle2c);
+		strcat(stringptr, ",");
+		strcat(stringptr, angle3c); 
+		result = stringptr;
+		printf("angles are: %s\n", result);
+		return result;
 	}
-
-
 	else
 	{
-		actual = "This is not a triangle";
-		return actual;
+		result = "This is not a triangle\n";
+		return result;
 	}
 }
