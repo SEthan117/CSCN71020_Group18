@@ -1,3 +1,5 @@
 #pragma once
 
-int* polygonPoints(int point1, int point2, int point3, int point4);
+int* polygonPoints(p1, p2, p3, p4);
+
+
