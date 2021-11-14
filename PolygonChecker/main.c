@@ -12,6 +12,7 @@ int main() {
 
 	char result[50] = { 0 };
 	char* test = "";
+	char* rectangle = "";
 
 
 	bool continueProgram = true;
@@ -37,8 +38,13 @@ int main() {
 			test = triangleAngle(triangleSideLengthPtr[0], triangleSideLengthPtr[1], triangleSideLengthPtr[2], &result);
 			printf("%s", test);
 			break;
-			//case 3:
-				//break;
+			case 3:
+			printf("Rectangle selected. \n");
+			int pointX[4] = { 0,0,0,0 };
+			int pointY[4] = { 0,0,0,0 };
+			int* rectanglePoints = getRectanglePoints(pointX, pointY);
+			rectangle = polygonPoints(pointX[1], pointY[1], pointX[2], pointY[2], pointX[3], pointY[3], pointX[4], pointY[4]);
+			break;
 		case 0:
 			continueProgram = false;
 			break;
@@ -79,4 +85,15 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+
+int getRectanglePoints(int* pointX, int* pointY)
+{
+	int points = (pointX, pointY);
+	printf("Input x values:");
+	for (int i = 1; i < 5; i++)
+	{
+		scanf_s("%d %d", &pointX[i], &pointY[i]);
+	}
+	return points;
 }

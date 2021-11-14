@@ -3,8 +3,17 @@
 #include"polygonSolver.h"
 
 
-char* polygonPoints(POINT p1, POINT p2, POINT p3, POINT p4)
+char* polygonPoints(int pointX1, int pointY1, int pointX2, int pointY2, int pointX3, int pointY3, int pointX4, int pointY4)
 {
+	POINT p1, p2, p3, p4;
+	p1.x = pointX1;
+	p1.y = pointY1;
+	p2.x = pointX2;
+	p2.y = pointY2;
+	p3.x = pointX3;
+	p3.y = pointY3;
+	p4.x = pointX4;
+	p4.y = pointY4;
 	char* result;
 	int line1 = abs(p1.x - p2.x);
 	int line2 = abs(p1.y - p2.y);

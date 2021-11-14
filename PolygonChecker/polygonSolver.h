@@ -1,10 +1,10 @@
 #pragma once
 typedef struct point
 {
-	double x;
-	double y;
+	int x;
+	int y;
 }POINT;
 
-char* polygonPoints(POINT, POINT, POINT, POINT);
+char* polygonPoints(int, int, int, int,int,int,int,int);
 
 
