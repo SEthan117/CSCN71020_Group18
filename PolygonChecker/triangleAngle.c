@@ -16,21 +16,21 @@ char* triangleAngle(int side1, int side2, int side3, char* stringptr)
 	double angle2;
 	double angle3;
 	double simplify;
-	double area;
+	double alt;
 	double pi;
 	double Lower;
 
-	simplify = (side1 + side2 + side3) / 2;
-	pi = acos(-1);
-	area = sqrt(simplify * (simplify - side1) * (simplify - side2) * (simplify - side3));
-	Lower = (side1 * side2 * side3) / (4 * area);
-	if ((side1 > 1 && side2 > 1 && side3 > 1))
+	simplify = (side1 + side2 + side3) / 2; //Simplification of a common equation
+	pi = acos(-1); //Creation of pi
+	alt = sqrt(simplify * (simplify - side1) * (simplify - side2) * (simplify - side3)); //Simplify another long equation
+	Lower = (side1 * side2 * side3) / (4 * alt); //Simplify a long equation for a final time
+	if ((side1 > 1 && side2 > 1 && side3 > 1)) //Confirm if triangle
 	{
-		angle1 = (180 / pi) * asin(side1 / (2 * Lower));
+		angle1 = (180 / pi) * asin(side1 / (2 * Lower)); //Get the angles
 		angle2 = (180 / pi) * asin(side2 / (2 * Lower));
 		angle3 = (180 / pi) * asin(side3 / (2 * Lower));
-		printf("This creates a triangle.\n");
-		snprintf(angle1c, 50, "%.2f", angle1);
+		printf("This creates a triangle.\n"); //Confirmation statement
+		snprintf(angle1c, 50, "%.2f", angle1); //Create result
 		snprintf(angle2c, 50, "%.2f", angle2);
 		snprintf(angle3c, 50, "%.2f", angle3);
 		strcpy(stringptr, angle1c);
@@ -40,11 +40,11 @@ char* triangleAngle(int side1, int side2, int side3, char* stringptr)
 		strcat(stringptr, angle3c); 
 		result = stringptr;
 		printf("angles are: %s\n", result);
-		return result;
+		return result; //output
 	}
 	else
 	{
-		result = "This is not a triangle\n";
+		result = "This is not a triangle\n"; //Result if not triangle
 		return result;
 	}
 }
