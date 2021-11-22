@@ -88,7 +88,7 @@ namespace GroupProjectUnitTests
 
 		}
 
-		TEST_METHOD(triangleangleTest1)
+		TEST_METHOD(triangleangleNotATriangleTest)
 		{
 			int side1 = -1;
 			int side2 = 3;
@@ -98,7 +98,7 @@ namespace GroupProjectUnitTests
 			Assert::AreEqual("This is not a triangle\n", result);
 
 		}
-		TEST_METHOD(triangleangleTest2)
+		TEST_METHOD(triangleangleEquilateralTriangleTest)
 		{
 			int side1 = 3;
 			int side2 = 3;
@@ -108,7 +108,7 @@ namespace GroupProjectUnitTests
 			Assert::AreEqual("26.39,26.39,26.39", result);
 
 		}
-		TEST_METHOD(rectanglcheakerPERFECTSQUARETest)
+		TEST_METHOD(rectanglcheckerPERFECTSQUARETest)
 		{
 			int point1x = 0;
 			int point1y = 0;
@@ -123,7 +123,7 @@ namespace GroupProjectUnitTests
 			Assert::AreEqual("16.00,and 16", result);
 
 		}
-		TEST_METHOD(rectanglcheakerRECTANGLETest)
+		TEST_METHOD(rectanglcheckerRECTANGLETest)
 		{
 			int point1x = 4;
 			int point1y = 10;

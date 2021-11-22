@@ -23,8 +23,8 @@ char* triangleAngle(int side1, int side2, int side3, char* stringptr)
 	simplify = (side1 + side2 + side3) / 2; //Simplification of a common equation
 	pi = acos(-1); //Creation of pi
 	alt = sqrt(simplify * (simplify - side1) * (simplify - side2) * (simplify - side3)); //Simplify another long equation
-	Lower = (side1 * side2 * side3) / (4 * alt); //Simplify a long equation for a final time
-	if ((side1 > 1 && side2 > 1 && side3 > 1)) //Confirm if triangle
+	Lower = ((double)side1 * (double)side2 * (double)side3) / (4 * alt); //Simplify a long equation for a final time
+	if (side1 > 1 && side2 > 1 && side3 > 1 && ((side1 + side2) >= side3) && ((side1 + side3) >= side2) && ((side2 + side3) >= side1)) //Confirm if triangle, now also uses triangle inequality rule
 	{
 		angle1 = (180 / pi) * asin(side1 / (2 * Lower)); //Get the angles
 		angle2 = (180 / pi) * asin(side2 / (2 * Lower));
@@ -44,6 +44,7 @@ char* triangleAngle(int side1, int side2, int side3, char* stringptr)
 	}
 	else
 	{
+		printf("This is not a triangle.\n"); 
 		result = "This is not a triangle\n"; //Result if not triangle
 		return result;
 	}
