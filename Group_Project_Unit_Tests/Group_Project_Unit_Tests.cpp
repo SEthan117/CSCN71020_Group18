@@ -108,6 +108,26 @@ namespace GroupProjectUnitTests
 			Assert::AreEqual("26.39,26.39,26.39", result);
 
 		}
+		TEST_METHOD(triangleAngleIsoscelesTest)
+		{
+			int side1 = 5;
+			int side2 = 5;
+			int side3 = 7;
+			char answer[50] = "";
+			char* result = triangleAngle(side1, side2, side3, answer);
+			Assert::AreEqual("29.00,29.00,42.75", result);
+
+		}
+		TEST_METHOD(triangleAngleScaleneTest)
+		{
+			int side1 = 8;
+			int side2 = 10;
+			int side3 = 12;
+			char answer[50] = "";
+			char* result = triangleAngle(side1, side2, side3, answer);
+			Assert::AreEqual("41.41,55.77,82.82", result);
+
+		}
 		TEST_METHOD(rectanglcheckerPERFECTSQUARETest)
 		{
 			int point1x = 0;
