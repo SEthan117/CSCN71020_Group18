@@ -9,8 +9,8 @@
 
 char* polygonPoints(int pointX1, int pointY1, int pointX2, int pointY2, int pointX3, int pointY3, int pointX4, int pointY4, char* stringptr)
 {
-	POINT p1, p2, p3, p4; //set POINT structs
-	p1.x = pointX1; //Set point structs to values
+	POINT p1, p2, p3, p4;
+	p1.x = pointX1;
 	p1.y = pointY1;
 	p2.x = pointX2;
 	p2.y = pointY2;
@@ -24,7 +24,7 @@ char* polygonPoints(int pointX1, int pointY1, int pointX2, int pointY2, int poin
 	double area = 0;
 	char areastring[50] = "";
 	char perimeterstring[50] = "";
-	int delta12x = abs(p1.x - p2.x); //Creating the lines
+	int delta12x = abs(p1.x - p2.x);
 	int delta12y = abs(p1.y - p2.y);
 	int delta34x = abs(p3.x - p4.x);
 	int delta34y = abs(p3.y - p4.y);
@@ -32,18 +32,18 @@ char* polygonPoints(int pointX1, int pointY1, int pointX2, int pointY2, int poin
 	int delta13y = abs(p1.y - p3.y);
 	int delta24x = abs(p2.x - p4.x);
 	int delta24y = abs(p2.y - p4.y);
-	double slope12 = 0; //Creating the slopes
+	double slope12 = 0;
 	double slope13 = 0;
 	double slope24 = 0;
 	double slope34 = 0;
-	double distance12 = 0; //Checking the distance
+	double distance12 = 0; 
 	double distance34 = 0;
 	double distance13 = 0;
 	double distance24 = 0;
 
-	if (delta12x != 0) //Check if slope needs to be calculated
+	if (delta12x != 0)
 	{
-		slope12 = (double)delta12y / (double)delta12x; //Slope equation
+		slope12 = (double)delta12y / (double)delta12x;
 	}
 	else
 	{

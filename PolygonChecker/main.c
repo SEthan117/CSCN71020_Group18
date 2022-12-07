@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include "main.h"
+#include "math.h"
 #include "triangleSolver.h"
 #include "triangleAngle.h"
 #include "polygonSolver.h"
